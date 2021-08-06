@@ -9,10 +9,11 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/HomeScreen/HomeScreen';
+import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, HomeParamList, TabTwoParamList } from '../types';
 import { AntDesign, MaterialIcons, Ionicons } from '@expo/vector-icons';
+import MovieDetailsScreen from '../screens/MovieDetailsScreen';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -67,8 +68,13 @@ function TabOneNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
+        name="MovieDetailsScreen"
+        component={MovieDetailsScreen}
+        options={{ title: '' }}
+      />
+      <HomeStack.Screen
         name="HomeScreen"
-        component={TabOneScreen}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>

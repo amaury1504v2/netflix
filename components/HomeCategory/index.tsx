@@ -13,7 +13,8 @@ interface HomeCategoryProps { //modèle du homecategory
         movies: {
             id: string,
             poster: string
-        }[]
+        }[],
+        cast: string[],
     }
 }
 
@@ -27,7 +28,8 @@ export default function HomeCategory(props: HomeCategoryProps) {
             renderItem = {({item}) => (
                 <Image style={styles.image} source={{ uri: item.poster }} />
             )} 
-            horizontal/>
+            horizontal
+            showsHorizontalScrollIndicator={false}/>
     </>
   );
 }
